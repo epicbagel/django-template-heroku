@@ -35,7 +35,7 @@ For production::
 To create a new Django project called '**your_project_name**' using
 django-template-heroku, run the following command::
 
-    $ django-admin.py startproject --template=https://github.com/sercanu/django-template-heroku/archive/master.zip --extension=py,rst,html --name=Procfile your_project_name
+    $ django-admin.py startproject --template=https://github.com/epicbagel/django-template-heroku/archive/master.zip --extension=py,rst,html --name=Procfile your_project_name
     # After creating project you can run it
     $ cd your_project_name
     $ python manage.py runserver
