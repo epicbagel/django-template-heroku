@@ -16,10 +16,8 @@ Creating your project at local
 
 We need a virtual environment. You can create with virtualenv or virtualenvwrapper::
 
-    # with virtualenvwrapper
-    $ mkvirtualenv dth
-    # or with virtualenv
-    $ virtualenv dth && source dth/bin/activate
+    $ virtualenv venv --distribute
+    
 
 Be sure that your virtual environment is activated.
 
