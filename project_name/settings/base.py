@@ -1,6 +1,6 @@
 """Common settings and globals."""
 
-
+import os
 from os.path import abspath, basename, dirname, join, normpath
 from sys import path
 
@@ -23,7 +23,7 @@ path.append(DJANGO_ROOT)
 
 ########## DEBUG CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#debug
-DEBUG = False
+DEBUG = os.environ.get('DEBUG', False)
 
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#template-debug
 TEMPLATE_DEBUG = DEBUG
@@ -93,6 +93,17 @@ STATIC_ROOT = normpath(join(SITE_ROOT, 'assets'))
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#static-url
 STATIC_URL = '/static/'
 
+# Amazon S3 details
+AWS_HEADERS = {
+    "Cache-Control": "public, max-age=86400",
+}
+AWS_S3_FILE_OVERWRITE = False
+AWS_QUERYSTRING_AUTH = False
+AWS_S3_SECURE_URLS = False
+AWS_REDUCED_REDUNDANCY = False
+AWS_IS_GZIPPED = False
+AWS_QUERYSTRING_AUTH = False
+
 # See: https://docs.djangoproject.com/en/dev/ref/contrib/staticfiles/#std:setting-STATICFILES_DIRS
 STATICFILES_DIRS = (
     normpath(join(SITE_ROOT, 'static')),
@@ -109,7 +120,7 @@ STATICFILES_FINDERS = (
 ########## SECRET CONFIGURATION
 # See: https://docs.djangoproject.com/en/dev/ref/settings/#secret-key
 # Note: This key should only be used for development and testing.
-SECRET_KEY = r"{{ secret_key }}"
+SECRET_KEY = r"mhin7xp&amp;_%jjk#+0zw6m4o0u@#oukz!-d6n^di077$4x__rwbb"
 ########## END SECRET CONFIGURATION
 
 
@@ -194,6 +205,8 @@ DJANGO_APPS = (
 
 THIRD_PARTY_APPS = (
     # Database migration helpers:
+    "bootstrap_helpers",
+    "gunicorn",
 )
 
 # Apps specific for this project go here.
@@ -222,7 +235,7 @@ LOGGING = {
     },
     'handlers': {
         'mail_admins': {
-            'level': 'ERROR',
+            'level': 'ERROR',l
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         }
