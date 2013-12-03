@@ -1,6 +1,13 @@
 Django==1.6
-django-braces==1.2.2
-django-model-utils==1.5.0
+-e git://github.com/epicbagel/django-braces.git#egg=django-braces-dev
+-e git://github.com/carljm/django-model-utils.git#egg=django-model-utils-dev
 logutils==0.3.3
 South==0.8.2
-dj-static
+-e git://github.com/epicbagel/django-custom-user.git#egg=custom_user-dev
+-e git://github.com/epicbagel/django-bootstrap-helpers.git#egg=django-bootstrap-helpers-dev
+-e git://github.com/epicbagel/django-test-views.git#egg=django-test-views-dev
+
+# Testing
+factory_boy
+dj_static
+gunicorn
