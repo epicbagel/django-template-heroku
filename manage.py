@@ -4,7 +4,7 @@ import sys
 
 if __name__ == "__main__":
     #os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings.local")
-    if os.environ.get('HEROKU', '') == 'true' :
+    if os.environ.has_key('DATABASE_URL'):
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings.heroku")
     else:
         os.environ.setdefault("DJANGO_SETTINGS_MODULE", "{{ project_name }}.settings.local")
