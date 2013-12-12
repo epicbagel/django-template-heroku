@@ -13,6 +13,9 @@ django-redis-cache==0.9.7
 redis==2.7.2
 hiredis
 
+# Email
+django-ses
+
 # Used for caching static media
 -e git://github.com/epicbagel/django-storages-cache.git#egg=django_storages_cache-dev
 
