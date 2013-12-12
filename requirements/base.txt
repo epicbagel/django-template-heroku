@@ -2,7 +2,6 @@ Django==1.6
 -e git://github.com/epicbagel/django-braces.git#egg=django-braces-dev
 -e git://github.com/carljm/django-model-utils.git#egg=django-model-utils-dev
 logutils==0.3.3
-South==0.8.2
 -e git://github.com/epicbagel/django-custom-user.git#egg=custom_user-dev
 -e git://github.com/epicbagel/django-bootstrap-helpers.git#egg=django-bootstrap-helpers-dev
 -e git://github.com/epicbagel/django-test-views.git#egg=django-test-views-dev
@@ -11,3 +10,7 @@ South==0.8.2
 factory_boy
 dj_static
 gunicorn
+
+# Deployment
+fabric
+South==0.8.2
